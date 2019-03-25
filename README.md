@@ -2,6 +2,20 @@
 
 Cloing Youtube with vanila js and Node.js
 
+## features
+
+### Pages
+
+- [ ] Home
+- [ ] Join
+- [ ] Login
+- [x] Search
+- [ ] User Detail
+- [ ] Edit Profile
+- [ ] Change Password
+- [ ] Upload
+- [ ] Video Detail
+
 ## export / module.exports
 
 - export에 대해서
