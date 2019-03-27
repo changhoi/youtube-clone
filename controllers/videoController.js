@@ -1,17 +1,39 @@
-export const home = (req, res) => res.render('home', { pageTitle: 'Home' })
+import db from '../fakedb';
+import routes from '../routes';
 
+export const home = (req, res) => res.render('home', { pageTitle: 'Home', db });
 export const search = (req, res) => {
-  const { term: searchingBy } = req.query
-  return res.render('search', { pageTitle: 'Search', searchingBy })
-}
+  const { term: searchingBy } = req.query;
+  console.log(typeof db);
+  console.log(typeof searchingBy);
+  return res.render('search', {
+    pageTitle: 'Search',
+    searchingBy,
+    db: db.filter(
+      video =>
+        video.title
+          .toLocaleLowerCase()
+          .indexOf(searchingBy.toLocaleLowerCase()) !== -1
+    )
+  });
+};
 
 export const videos = (req, res) =>
-  res.render('videos', { pageTitle: 'Videos' })
-export const upload = (req, res) =>
-  res.render('upload', { pageTitle: 'Upload' })
+  res.render('videos', { pageTitle: 'Videos' });
+
+export const getUpload = (req, res) =>
+  res.render('upload', { pageTitle: 'Upload' });
+export const postUpload = (req, res) => {
+  const {
+    body: { file, title, description }
+  } = req;
+  // TODO: Upload and save video
+  res.redirect(routes.videoDetail(121566));
+};
+
 export const videoDetail = (req, res) =>
-  res.render('videoDetail', { pageTitle: 'Video Detail' })
+  res.render('videoDetail', { pageTitle: 'Video Detail' });
 export const editVideo = (req, res) =>
-  res.render('editVideo', { pageTitle: 'Edit Video' })
+  res.render('editVideo', { pageTitle: 'Edit Video' });
 export const deleteVideo = (req, res) =>
-  res.render('deleteVideo', { pageTitle: 'Delete Video' })
+  res.render('deleteVideo', { pageTitle: 'Delete Video' });
