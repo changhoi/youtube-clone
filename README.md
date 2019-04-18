@@ -29,3 +29,7 @@ Cloing Youtube with vanila js and Node.js
 ## multer
 
 ## MongoDB / Mongoose
+
+## Node.js - path, os, process
+
+## babel polyfill (@babel/polyfill)
