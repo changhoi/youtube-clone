@@ -4,7 +4,6 @@ import Video from '../models/Video';
 export const home = async (req, res) => {
   try {
     const videos = await Video.find({}).sort({ _id: -1 });
-
     return res.render('home', {
       pageTitle: 'Home',
       videos
@@ -51,7 +50,6 @@ export const postUpload = async (req, res) => {
     title,
     description
   });
-  console.log(newVideo);
   res.redirect(routes.videoDetail(newVideo.id));
 };
 
