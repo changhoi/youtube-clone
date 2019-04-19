@@ -33,3 +33,6 @@ Cloing Youtube with vanila js and Node.js
 ## Node.js - path, os, process
 
 ## babel polyfill (@babel/polyfill)
+
+## Passport.js - Authentication
+- Passport-local mongoose

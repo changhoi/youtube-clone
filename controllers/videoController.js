@@ -7,7 +7,7 @@ export const home = async (req, res) => {
 
     return res.render('home', {
       pageTitle: 'Home',
-      db: videos
+      videos
     });
   } catch (e) {
     console.error(e);

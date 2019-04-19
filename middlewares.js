@@ -1,16 +1,16 @@
-import routes from "./routes";
-import multer from "multer";
+import multer from 'multer';
+import routes from './routes';
 
-export const uploadVideo = multer({ dest: "uploads/videos/" }).single(
-  "videoFile"
-);
+const multerVideo = multer({ dest: 'uploads/videos/' });
 
 export const localsMiddleware = (req, res, next) => {
-  res.locals.siteName = "Youtube Clone";
+  res.locals.siteName = 'WeTube';
   res.locals.routes = routes;
   res.locals.user = {
-    isAuthenticated: true,
+    isAuthenticated: false,
     id: 1
   };
   next();
 };
+
+export const uploadVideo = multerVideo.single('videoFile');
