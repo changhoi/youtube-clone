@@ -1,8 +1,8 @@
-import passport from 'passport';
-import GithubStrategy from 'passport-github';
-import User from './models/User';
-import { githubLoginCallback } from './controllers/userController';
-import routes from './routes';
+import passport from "passport";
+import GithubStrategy from "passport-github";
+import User from "./models/User";
+import { githubLoginCallback } from "./controllers/userController";
+import routes from "./routes";
 
 passport.use(User.createStrategy());
 
